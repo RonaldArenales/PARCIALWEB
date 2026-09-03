@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ receta.nombre }}</title>
+    <link rel="stylesheet" href="{% static 'recetas/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ receta.nombre }}</h1>
+        <p class="subtitulo">Cocina {{ receta.tipo_cocina }}</p>
+    </header>
+
+    <main>
+        <section class="datos-generales">
+            <h2>Datos generales</h2>
+            <dl>
+                <dt>Tipo de cocina</dt>
+                <dd>{{ receta.tipo_cocina }}</dd>
+
+                <dt>Tiempo de preparación</dt>
+                <dd>{{ receta.tiempo_preparacion }}</dd>
+
+                <dt>Origen</dt>
+                <dd>{{ receta.origen.region }}, {{ receta.origen.pais }}</dd>
+            </dl>
+        </section>
+
+        <section class="ingredientes">
+            <h2>Ingredientes</h2>
+            {% for ingrediente in receta.ingredientes %}
+            <article class="ingrediente">
+                <span class="nombre">{{ ingrediente.nombre }}</span>
+                <span class="cantidad">{{ ingrediente.cantidad }} {{ ingrediente.unidad }}</span>
+            </article>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>Examen Parcial — Desarrollo de Aplicaciones Web</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,100 @@
+:root {
+    --color-primario: #b3541e;
+    --color-fondo: #fdf6ec;
+    --color-tarjeta: #ffffff;
+    --color-texto: #2b2118;
+    --color-borde: #e6d8c3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+header {
+    background: var(--color-primario);
+    color: #fff;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 0.25rem;
+    font-size: 2rem;
+}
+
+.subtitulo {
+    margin: 0;
+    opacity: 0.9;
+}
+
+main {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+section {
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+section h2 {
+    margin-top: 0;
+    color: var(--color-primario);
+    border-bottom: 2px solid var(--color-borde);
+    padding-bottom: 0.5rem;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem 1rem;
+    margin: 0;
+}
+
+dt {
+    font-weight: 600;
+    color: var(--color-primario);
+}
+
+dd {
+    margin: 0;
+}
+
+.ingrediente {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.ingrediente:last-child {
+    border-bottom: none;
+}
+
+.ingrediente .nombre {
+    font-weight: 500;
+}
+
+.ingrediente .cantidad {
+    color: #6b6b6b;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #8a7a68;
+    font-size: 0.9rem;
+}
